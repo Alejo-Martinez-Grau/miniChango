@@ -14,12 +14,11 @@ const NavBar = (props) => {
       totalArray = totalArray.concat(
         props.products[i][2] * props.counters[i]["value"]
       );
-      console.log(totalArray);
     }
 
     total = totalArray.reduce((acc, item) => {
       return (acc += item);
-    });
+    },0);
     return total;
   };
 
