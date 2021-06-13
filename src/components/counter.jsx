@@ -41,7 +41,7 @@ componentWillUnmount(){
     }
     formatCount() {
       const { value } = this.props.counter;
-      return value === 0 ? "Cero" : value;
+      return value === 0 ? "0" : value;
     }
   }
   export default Counter;
