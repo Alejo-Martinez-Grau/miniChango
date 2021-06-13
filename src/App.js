@@ -62,7 +62,9 @@ class App extends Component {
     </section>
     <main className="container">
       <section className='row justify-content-center'>
-        <ProductList></ProductList>
+        <ProductList 
+          counters={this.state.counters}
+        ></ProductList>
         <Counters 
       counters={this.state.counters}
       onReset={this.handleReset}
