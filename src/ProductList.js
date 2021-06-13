@@ -4,6 +4,19 @@ import React, {useState} from 'react';
 
 const ProductList = (props) => {
 const [products, setProducts] = useState([[1, "Tomate", 80],[2, "Papa", 60],[3, "Zanahoria", 60],[4, "Palta", 200]]);
+
+const renderListItem = (i) => {
+  return (
+  <tr>
+  <th scope="row">{products[i][0]}</th>
+  <td>{products[i][1]}</td>
+  <td>{products[i][2]}</td>
+  <td>{products[i][2]*props.counters[i]['value']}</td>
+</tr>
+  );
+
+}
+
     return (
         
         <div className="table-responsive-sm">
@@ -17,7 +30,11 @@ const [products, setProducts] = useState([[1, "Tomate", 80],[2, "Papa", 60],[3, 
     </tr>
   </thead>
   <tbody>
-    <tr>
+  {Array(4).fill(null).map((listItems, i) => {
+    return renderListItem(i);
+    })}
+    {/* {renderListItem()} */}
+    {/* <tr>
       <th scope="row">{products[0][0]}</th>
       <td>{products[0][1]}</td>
       <td>{products[0][2]}</td>
@@ -40,12 +57,14 @@ const [products, setProducts] = useState([[1, "Tomate", 80],[2, "Papa", 60],[3, 
       <td>{products[3][1]}</td>
       <td>{products[3][2]}</td>
       <td>{products[3][2]*props.counters[3]['value']}</td>
-    </tr>
+    </tr> */}
   </tbody>
 </table>
         </div>
     );
-};
+}
+
+
 
 // function getSubTotal(props){
 //     if(props.counter.id) return 4;
