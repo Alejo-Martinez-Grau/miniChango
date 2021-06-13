@@ -1,11 +1,28 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
-import cart from '../images/cart.png';
+import cart from "../images/cart.png";
 
 // stateless functional component
 // snippet sfc
 const NavBar = (props) => {
-  console.log("navBar render");
+  //
+  const totalSum = (i) => {
+    let totalArray = [];
+    let total;
+
+    for (i = 0; i < props.counters.length; i++) {
+      totalArray = totalArray.concat(
+        props.products[i][2] * props.counters[i]["value"]
+      );
+      console.log(totalArray);
+    }
+
+    total = totalArray.reduce((acc, item) => {
+      return (acc += item);
+    });
+    return total;
+  };
+
   return (
     <nav className="navbar navbar-light bg-light justify-content-center">
       <a className="navbar-brand" href="#">
@@ -14,28 +31,11 @@ const NavBar = (props) => {
         <span className="badge badge-pill badge-secondary">
           {props.totalCounters}
         </span>
-        
       </a>
-      
-      <h3>Total: 500$</h3>
-      
+
+      <h3>{`Total: $${totalSum(props.counters.length)}`}</h3>
     </nav>
   );
 };
-
-// class NavBar extends Component {
-
-//   render() {
-//     return (
-//       <nav className="navbar navbar-light bg-light">
-//           <a className="navbar-brand" href="#">
-//             Navbar <span className="badge badge-pill badge-secondary">
-//               {this.props.totalCounters}
-//               </span>
-//           </a>
-//       </nav>
-//     );
-//   }
-// }
 
 export default NavBar;

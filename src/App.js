@@ -57,7 +57,7 @@ class App extends Component {
     <React.Fragment>
       <section className='container'>
 
-    <NavBar  totalCounters={this.state.counters.filter(c=> c.value>0).length} />
+    <NavBar products={this.props.products} counters={this.state.counters} totalCounters={this.state.counters.filter(c=> c.value>0).length} />
 
     </section>
     <main className="container">
