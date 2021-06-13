@@ -64,6 +64,7 @@ class App extends Component {
       <section className='row justify-content-center'>
         <ProductList 
           counters={this.state.counters}
+          products={this.props.products}
         ></ProductList>
         <Counters 
       counters={this.state.counters}

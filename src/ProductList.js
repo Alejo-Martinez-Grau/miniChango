@@ -1,21 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
 
 const ProductList = (props) => {
-  //initial state, for the exercize there is no need to modify the state with setProducts
-  const [products] = useState([
-    [1, "Tomate", 80],
-    [2, "Papa", 60],
-    [3, "Zanahoria", 60],
-    [4, "Palta", 200],
-  ]);
 
   const renderListItem = (i) => {
     return (
       <tr>
-        <th scope="row">{products[i][0]}</th>
-        <td>{products[i][1]}</td>
-        <td>{products[i][2]}</td>
-        <td>{products[i][2] * props.counters[i]["value"]}</td>
+        <th scope="row">{props.products[i][0]}</th>
+        <td>{props.products[i][1]}</td>
+        <td>{props.products[i][2]}</td>
+        <td>{props.products[i][2] * props.counters[i]["value"]}</td>
       </tr>
     );
   };
