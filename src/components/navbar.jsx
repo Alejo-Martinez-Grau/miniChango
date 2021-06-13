@@ -14,7 +14,11 @@ const NavBar = (props) => {
         <span className="badge badge-pill badge-secondary">
           {props.totalCounters}
         </span>
+        
       </a>
+      
+      <h3>Total: 500$</h3>
+      
     </nav>
   );
 };
