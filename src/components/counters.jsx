@@ -8,7 +8,7 @@ class Counters extends Component {
       <div>
         <button
           onClick={this.props.onReset}
-          className="brn btn-primary btn-sm m-2"
+          className="brn btn-primary btn-sm m-2 container"
         >
           Reset
         </button>

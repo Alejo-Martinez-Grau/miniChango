@@ -7,7 +7,7 @@ import cart from '../images/cart.png';
 const NavBar = (props) => {
   console.log("navBar render");
   return (
-    <nav className="navbar navbar-light bg-light">
+    <nav className="navbar navbar-light bg-light justify-content-center">
       <a className="navbar-brand" href="#">
         <img src={cart} width="50" height="50" alt="Chango"></img>
         Shopping

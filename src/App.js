@@ -1,7 +1,8 @@
-import React, { Component } from "react";
+import React, { Component} from "react";
 import './App.css';
 import NavBar from './components/navbar';
 import Counters from './components/counters';
+import ProductList from "./ProductList";
 // usamos la NAVBAR de bootstrap
 // https://getbootstrap.com/docs/5.0/components/navbar/
 
@@ -54,14 +55,21 @@ class App extends Component {
     console.log('app - rendered');
   return (
     <React.Fragment>
-    <NavBar totalCounters={this.state.counters.filter(c=> c.value>0).length} />
+      <section className='container'>
+
+    <NavBar  totalCounters={this.state.counters.filter(c=> c.value>0).length} />
+
+    </section>
     <main className="container">
-      <Counters 
+      <section className='row justify-content-center'>
+        <ProductList></ProductList>
+        <Counters 
       counters={this.state.counters}
       onReset={this.handleReset}
       onIncrement={this.handleIncrement}
       onDelete={this.handleDelete}
       />
+      </section>
     </main>
     </React.Fragment>
   );
